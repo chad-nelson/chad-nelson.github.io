@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+## About Chad Nelson
 
-You can use the [editor on GitHub](https://github.com/chad-nelson/chad-nelson.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+I am currently learning new analytical tools and practices through the Master of Science in Business Analtyics program at the University of Iowa.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+My valuable time is best spent when I am learning something new or engaging with family and friends. I am an avid runner and I like to read when I have time. Right now, I am about halfway finished with Chris Gardner's *The Pursuit of Happyness.* It is one of my favorites because I love a good underdog story. 
 
-### Markdown
+This site displays some of my skills, but I am always developing new ones. This site is a work in progress to reflect that.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/chad-nelson/chad-nelson.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Please introduce yourself to me! I love meeting new people and learning about their story.
