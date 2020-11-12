@@ -55,7 +55,7 @@ h2 {
 */
 .about-me .container .me {
   background-size: cover;
-  background-image: url("../images/Image_self.JPG");
+  background-image: url("../images/Image_me.jpg");
   background-position:center;
   background-repeat:no-repeat;
   height: 500px;
