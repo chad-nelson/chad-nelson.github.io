@@ -1,3 +1,3 @@
 ## About Chad Nelson
 
-This is a personal website with a quick bio and some of my experiences.
+This is a portfolio site with a quick bio and my experiences.
