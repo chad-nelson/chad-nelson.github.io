@@ -40,7 +40,7 @@ h2 {
    Jumbotron
 */
 .jumbotron.jumbotron-fluid {
-  background-color: #57595D;
+  background-color: black;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
