@@ -131,7 +131,7 @@ footer {
   margin-top: 100px;
   margin-bottom: 0px;
   padding-left: 25px;
-  background-color: #222222;
+  background-color: black;
   color: white;
   height: 120px;
   display: flex;
@@ -147,7 +147,7 @@ footer {
 
 .footer li{
   display: inline;
-  color: black;
+  color: rgb(255,223,0);
 }
 .footer li.customclass {
 	color: white;
