@@ -1,1 +1,9 @@
-theme: jekyll-theme-minimal
+title: Chad Nelson
+description: Analytics and business intelligence — reporting tools, automated pipelines, and pricing models.
+
+# Don't publish these to the live site
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
