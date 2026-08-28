@@ -1,135 +1,163 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-	  
-<!--    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">-->
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selected Work — Chad Nelson</title>
+  <meta name="description" content="Analytics and business intelligence projects by Chad Nelson: automated pricing tools, SQL pipelines, segmentation analysis, and an interactive public dashboard.">
 
-    <title>Chad Nelson</title>
-	
-	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/layout.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/site.css">
+</head>
+<body>
 
-  </head>
-  <body>
-
-    <section>
-      <header>
-        <!-- fixed-top makes the navbar stick to the top of the screen as the user is scrolling -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-			   <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://chad-nelson.github.io/static/documents/Chad_Nelson_Resume.pdf">Resume</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    </section>
+  <!-- ====================================================== Navigation -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="nav-mark" href="../index.html">Chad Nelson</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="./projects.html" aria-current="page">Work</a></li>
+        <li><a href="https://datastudio.google.com/reporting/099b039d-3b90-41fb-8594-2baaa710fe81/page/p_wgjtcgwo6d" target="_blank" rel="noopener">Dashboard</a></li>
+        <li><a href="../static/Chad_Nelson_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
-    <!-- *************************************
-      Jumbotron Section
-    -->
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container-fluid">
-        <h1>Chad Nelson</h1>
-		</br>
-        <h3> Projects <h3>
+
+    <!-- ====================================================== Hero -->
+    <header class="hero hero--compact">
+      <div class="wrap">
+        <h1 class="hero-name">Selected<br>Work</h1>
+        <p class="hero-meta">Tools, models, and analysis</p>
+        <p class="hero-sub">Five projects, each one built to answer a question somebody actually needed answered.</p>
       </div>
-    </div>
+    </header>
 
+    <!-- ====================================================== Featured project -->
+    <section class="band band--dark">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--dark">Live and interactive — Looker Studio</p>
+        <div class="feature">
+          <h2 class="feature-title">Capacity &amp; Margin Dashboard</h2>
 
-	<!-- *************************************
-	Project Info
-	-->
-	<div class="container">
-		<h3> <u>Business Analytics Professional Work</u> </h3> <br>
-		<h5> Group Quoting Tool </h5> <br>
-		
-		<p> I created this tool in Excel for ease of use for myself and the other people who use it, but it is connected through
-		SQL and SAS to our databases. I wrote multiple VBA macros to automate the processes of updating the data and exporting the file
-		once the appropriate information is filled in. I also made a page of adjustable inputs to the formulas so my team's leaders can 
-		alter the outcomes if they'd like and see how other leaders are making use of their options.</p>
+          <p>I took a public federal dataset covering roughly 5,500 hospitals and tested whether the capacity logic I use daily in pricing holds up in an industry I've never worked in. Every core metric has a direct equivalent: patient days over available bed days is occupancy; revenue over available bed days is revenue per available unit; patient days over discharges is average length of stay.</p>
 
-		<h5> Booking Window Analysis </h5> <br>
+          <p>It holds up. Facilities running above 70% occupancy posted a positive median operating margin. Below 25%, the median was roughly negative 9%, and 70% of them lost money. The relationship is clean and it runs in one direction across the entire range.</p>
 
-		<p> In this task, I was asked by an executive to create a report by visualizing data gathered through SQL. Gathering the data
-		was the biggest challenge as the data was not able to be easily queried. It required creating a series of case statements in
-		the query in order to compartmentalize the data into the desired format.</p>
-		
-		<h5> Hotel Markup Automation </h5> <br>
-		
-		<p> This project was to automatically adjust airfare pricing based on data inputs to determine if it was packaged with a hotel purchase.
-		There are offers which discount rates if both airfare and lodging are purchased, so in order to maximize profitability, if airfare
-		was being purchased with lodging, we would adjust the airfare so we would still get our full rate. I was able to take lead on this 
-		project because I had a better knowledge of Python than my coworkers and was able to utilize its capabilities more effectively. </p>
-		
-		<h3> <u> Business Analytics Educational Work </u> </h3> <br>
-		<h5> Big Data Analytics Project</h5 ><br>
-		
-		<p> In this project, I used Spark R in the Databricks analytics platform to predict the payment type of taxi customers based on multiple input
-		variables. The data used is taxi data from New York City during August 2014. I used both a logistic regression and random forest model to
-		predict the outcome of payment type. After viewing the results, it appears that passenger count was the largest indicator of payment type
-		based on the input variables used. There is no surcharge for extra passengers in New York City taxis, but this could be a result of people
-		tipping more when their group is larger. If the customer tips more, they may not have enough cash on hand or not want to use a large
-		amount of their cash. </p>
-		
-		<h5> Quantitative Finance Project 1</h5 ><br>
-		
-		<p> I used Python in this project to analyze the relative strength index (RSI) of a stock or exchange-traded fund (ETF) by analyzing the Invesco QQQ
-		ETF which tracks the Nasdaq-100. For both this project and the one below, I used the University of Iowa's high-performance computing resources.</p>
-		<!--<a class="nav-link" href="../static/documents/Quantitative_Finance.html">Quantitative Finanace Project 1 Script</a><br>-->
-	
-		<h5> Quantitative Finance Project 2</h5 ><br>
-		
-		<p> In this project, I again used Python to find metrics such as average order life, number of orders by time frame, order imbalance, and percentage price change for Apple stock 
-		on a single trading day only through the Nasdaq exchange. The data was obtained from Wharton Research Data Services.</p>
-	
-		</br>
-	   
-	<!-- <div class="col-md-4">
-	</br>
-	<a class="btn btn-primary gold" href="https://github.com/chad-nelson" target="_blank">View Repository</a>
-	</div>
-	<div class="col-md-4">
-	</br>
-	<a class="btn btn-primary gold" href="../static/documents/CEOpayratio.pdf" target="_blank">View Report</a>
-	-->
-	</div>	
-	
+          <p>I cleaned the raw file from 6,103 records down to 5,507 usable ones, built the calculated fields and weighting logic, and designed a three-page report with filters for region, size, facility type, and ownership. It's public — click through it yourself.</p>
+
+          <ul class="readouts">
+            <li><span class="figure">5,507</span><span class="caption">Facilities analyzed</span></li>
+            <li><span class="figure">56%</span><span class="caption">Lost money on operations</span></li>
+            <li><span class="figure">3</span><span class="caption">Interactive report pages</span></li>
+            <li><span class="figure">FY2023</span><span class="caption">CMS public use file</span></li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://datastudio.google.com/reporting/099b039d-3b90-41fb-8594-2baaa710fe81/page/p_wgjtcgwo6d" target="_blank" rel="noopener">Open the dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== Project list -->
+    <section class="band">
+      <div class="wrap">
+        <p class="eyebrow">Professional work</p>
+        <h2 class="section-head">Things people use every day</h2>
+        <hr class="rule-gold">
+
+        <ul class="project-list">
+
+          <!-- ---------------------------------------------- Tool rebuild -->
+          <li class="project">
+            <p class="project-stack">Excel · SQL · VBA · XML</p>
+            <h3 class="project-title">Pricing Decision &amp; Performance Tool — Full Rebuild</h3>
+            <p class="project-context">MGM Resorts International</p>
+
+            <p>The primary tool my team uses to set pricing and monitor property performance had become slow and manual to maintain. I led the redesign and rebuilt it largely on my own.</p>
+
+            <p>I gathered requirements from the managers who use it daily, worked with our data team to confirm what sources were available, and rebuilt it from the ground up: SQL for automated data retrieval, VBA for the processing logic, XML for a custom interface, and extensive formula work behind the summary views. I tested it with end users, fixed what broke before rollout, and documented it in SOPs so it doesn't depend on me being around.</p>
+
+            <p class="impact">In daily use by roughly 30 people across the revenue organization — revenue managers, directors and executive directors, the group optimization team, and up through the Senior Vice President and Chief Revenue Officer.</p>
+          </li>
+
+          <!-- ---------------------------------------------- Quoting tool -->
+          <li class="project">
+            <p class="project-stack">Excel · SQL · SAS · VBA</p>
+            <h3 class="project-title">Automated Quoting Tool</h3>
+            <p class="project-context">MGM Resorts International</p>
+
+            <p>Built in Excel so the people who needed it could actually use it, but wired directly into our databases through SQL and SAS. VBA macros handle the data refresh and the export, so the file updates itself and produces a finished quote once the inputs are filled in.</p>
+
+            <p>I added an adjustable-inputs page on top of the formulas so team leaders can change assumptions themselves and see how other leaders are using their own options — turning a fixed calculator into something people could actually test decisions against.</p>
+          </li>
+
+          <!-- ---------------------------------------------- Lead time -->
+          <li class="project">
+            <p class="project-stack">SQL · Data visualization</p>
+            <h3 class="project-title">Lead Time &amp; Segment Analysis</h3>
+            <p class="project-context">MGM Resorts International</p>
+
+            <p>An executive wanted to know which customer segments buy early and which ones wait until the last minute. The analysis was the easy part — the data wasn't stored in a way that could be queried by lead time at all.</p>
+
+            <p>I wrote a layered set of CASE statements to bucket raw transaction records into time-to-purchase bands, then built the visualization comparing segments across those bands. The result showed which segments commit far enough ahead to be worth pursuing early, and which ones only ever show up close to the date.</p>
+          </li>
+
+          <!-- ---------------------------------------------- Bundled pricing -->
+          <li class="project">
+            <p class="project-stack">Python</p>
+            <h3 class="project-title">Bundled Pricing Automation</h3>
+            <p class="project-context">Allegiant Air</p>
+
+            <p>One product was sold at a discount when it was purchased alongside a second product. That protected the bundle but quietly ate the margin on the transaction as a whole.</p>
+
+            <p>I built an automated adjustment that detects the bundle at the point of pricing and raises the first product's rate accordingly, so the full rate is preserved instead of discounted twice. I led the build because I had more depth in Python than the rest of the team and could get more out of the approach.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================== Toolkit -->
+    <section class="band band--tight">
+      <div class="wrap">
+        <div class="toolkit">
+          <p class="eyebrow">Toolkit</p>
+          <ul class="tag-list">
+            <li>SQL</li>
+            <li>Python</li>
+            <li>Excel &amp; VBA</li>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>Looker Studio</li>
+            <li>Azure Databricks</li>
+            <li>SAS</li>
+            <li>XML</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-
-
-  <!-- *************************************
-    Footer Section
-  -->
+  <!-- ====================================================== Footer -->
   <footer class="footer">
-    <h5> Get in touch </h5>
-    <ul>
-	  <a href="mailto:chad.odell.nelson@gmail.com"><li>Email</li></a>
-	  <li class="customclass"> | </li>
-	  <a  style="color:gold;"<li>Phone: (712) 540-9769</li></a>
-	  <li class="customclass"> | </li>
-	  <a  href="https://linkedin.com/in/nelson-chad"><li>LinkedIn</li></a>
-    </ul>
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:chad.odell.nelson@gmail.com">chad.odell.nelson@gmail.com</a></li>
+        <li><a href="tel:+17125409769">(712) 540-9769</a></li>
+        <li><a href="https://linkedin.com/in/nelson-chad" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/chad-nelson" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <p class="colophon">Las Vegas, NV &nbsp;·&nbsp; M.S. Business Analytics, University of Iowa</p>
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-  </body>
+</body>
 </html>
