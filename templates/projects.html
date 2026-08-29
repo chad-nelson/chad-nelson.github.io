@@ -31,29 +31,26 @@
     <!-- ====================================================== Hero -->
     <header class="hero hero--compact">
       <div class="wrap">
-        <h1 class="hero-name">Selected<br>Work</h1>
+        <h1 class="hero-name">Analytics<br>Work</h1>
         <p class="hero-meta">Tools, models, and analysis</p>
-        <p class="hero-sub">Five projects, each one built to answer a question somebody actually needed answered.</p>
+        <p class="hero-sub">Projects built to answer questions from leadership.</p>
       </div>
     </header>
 
     <!-- ====================================================== Featured project -->
     <section class="band band--dark">
       <div class="wrap">
-        <p class="eyebrow eyebrow--dark">Live and interactive — Looker Studio</p>
+        <p class="eyebrow eyebrow--dark">Looker Studio</p>
         <div class="feature">
           <h2 class="feature-title">Capacity &amp; Margin Dashboard</h2>
 
-          <p>I took a public federal dataset covering roughly 5,500 hospitals and tested whether the capacity logic I use daily in pricing holds up in an industry I've never worked in. Every core metric has a direct equivalent: patient days over available bed days is occupancy; revenue over available bed days is revenue per available unit; patient days over discharges is average length of stay.</p>
+          <p>I took a public federal dataset covering roughly 5,500 hospitals and tested whether the capacity logic I use daily in pricing holds up in the healthcare industry. Patient days over available bed days is occupancy; revenue over available bed days is revenue per available unit; patient days over discharges is average length of stay.</p>
 
-          <p>It holds up. Facilities running above 70% occupancy posted a positive median operating margin. Below 25%, the median was roughly negative 9%, and 70% of them lost money. The relationship is clean and it runs in one direction across the entire range.</p>
-
-          <p>I cleaned the raw file from 6,103 records down to 5,507 usable ones, built the calculated fields and weighting logic, and designed a three-page report with filters for region, size, facility type, and ownership. It's public — click through it yourself.</p>
+          <p>Facilities running above 70% occupancy posted a positive median operating margin. Below 25%, the median was roughly negative 9%, and 70% of them lost money.</p>
 
           <ul class="readouts">
             <li><span class="figure">5,507</span><span class="caption">Facilities analyzed</span></li>
             <li><span class="figure">56%</span><span class="caption">Lost money on operations</span></li>
-            <li><span class="figure">3</span><span class="caption">Interactive report pages</span></li>
             <li><span class="figure">FY2023</span><span class="caption">CMS public use file</span></li>
           </ul>
 
@@ -67,8 +64,7 @@
     <!-- ====================================================== Project list -->
     <section class="band">
       <div class="wrap">
-        <p class="eyebrow">Professional work</p>
-        <h2 class="section-head">Things people use every day</h2>
+        <h2 class="section-head">Professional Work</h2>
         <hr class="rule-gold">
 
         <ul class="project-list">
@@ -81,7 +77,7 @@
 
             <p>The primary tool my team uses to set pricing and monitor property performance had become slow and manual to maintain. I led the redesign and rebuilt it largely on my own.</p>
 
-            <p>I gathered requirements from the managers who use it daily, worked with our data team to confirm what sources were available, and rebuilt it from the ground up: SQL for automated data retrieval, VBA for the processing logic, XML for a custom interface, and extensive formula work behind the summary views. I tested it with end users, fixed what broke before rollout, and documented it in SOPs so it doesn't depend on me being around.</p>
+            <p>I gathered requirements from the people who use it daily and worked with our data team to confirm what sources were available: SQL for automated data retrieval, VBA for the automating things when possible, XML for a custom interface, and extensive formula work to show relevant metrics to make decisions.</p>
 
             <p class="impact">In daily use by roughly 30 people across the revenue organization — revenue managers, directors and executive directors, the group optimization team, and up through the Senior Vice President and Chief Revenue Officer.</p>
           </li>
@@ -92,9 +88,9 @@
             <h3 class="project-title">Automated Quoting Tool</h3>
             <p class="project-context">MGM Resorts International</p>
 
-            <p>Built in Excel so the people who needed it could actually use it, but wired directly into our databases through SQL and SAS. VBA macros handle the data refresh and the export, so the file updates itself and produces a finished quote once the inputs are filled in.</p>
+            <p>Built in Excel for easy front-end use by the sales teams, but wired directly into our databases through SQL, SAS, and now Databricks. VBA macros handle the data refresh and the export, so the file updates itself and produces a finished quote once the inputs are filled in.</p>
 
-            <p>I added an adjustable-inputs page on top of the formulas so team leaders can change assumptions themselves and see how other leaders are using their own options — turning a fixed calculator into something people could actually test decisions against.</p>
+            <p>I added an adjustable parameters page so team leaders in revenue management can alter rate outputs themselves and see how other leaders are tuning their own parameters.</p>
           </li>
 
           <!-- ---------------------------------------------- Lead time -->
@@ -103,9 +99,9 @@
             <h3 class="project-title">Lead Time &amp; Segment Analysis</h3>
             <p class="project-context">MGM Resorts International</p>
 
-            <p>An executive wanted to know which customer segments buy early and which ones wait until the last minute. The analysis was the easy part — the data wasn't stored in a way that could be queried by lead time at all.</p>
+            <p>An executive wanted to know which customer segments buy early and which ones wait until the last minute.</p>
 
-            <p>I wrote a layered set of CASE statements to bucket raw transaction records into time-to-purchase bands, then built the visualization comparing segments across those bands. The result showed which segments commit far enough ahead to be worth pursuing early, and which ones only ever show up close to the date.</p>
+            <p>I wrote a set of CASE statements in SQL to bucket transaction records into groups based on purchases by days before arrival (DBA), then built the visualization comparing segments across those groups The result showed which segments commit far enough ahead to be worth pursuing early, and which ones tend to purchase close to the date.</p>
           </li>
 
           <!-- ---------------------------------------------- Bundled pricing -->
@@ -114,9 +110,9 @@
             <h3 class="project-title">Bundled Pricing Automation</h3>
             <p class="project-context">Allegiant Air</p>
 
-            <p>One product was sold at a discount when it was purchased alongside a second product. That protected the bundle but quietly ate the margin on the transaction as a whole.</p>
+            <p>Vacation packages are often sold at a discount when multiple items are purchased as part of a bundle. That ate the margin on airline tickets purchased with a hotel and/or rental car.</p>
 
-            <p>I built an automated adjustment that detects the bundle at the point of pricing and raises the first product's rate accordingly, so the full rate is preserved instead of discounted twice. I led the build because I had more depth in Python than the rest of the team and could get more out of the approach.</p>
+            <p>I built an automated tool that detects the bundle at the point of pricing and raises the airline fare accordingly so the full rate is preserved.</p>
           </li>
 
         </ul>
