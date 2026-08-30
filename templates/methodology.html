@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Methodology — Chad Nelson</title>
+  <meta name="description" content="How the Capacity and Margin Dashboard was built: CMS HCRIS source data, cleaning rules, metric definitions, weighting method, and known limitations.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/site.css">
+</head>
+<body>
+
+  <!-- ====================================================== Navigation -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="nav-mark" href="../index.html">Chad Nelson</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="./projects.html" aria-current="page">Work</a></li>
+        <li><a href="https://datastudio.google.com/reporting/099b039d-3b90-41fb-8594-2baaa710fe81/page/p_wgjtcgwo6d" target="_blank" rel="noopener">Dashboard</a></li>
+        <li><a href="../static/Chad_Nelson_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ====================================================== Hero -->
+    <header class="hero hero--compact">
+      <div class="wrap">
+        <h1 class="hero-name">Dashboard<br>Methodology</h1>
+        <p class="hero-meta">Capacity &amp; Margin Dashboard</p>
+        <p class="hero-sub">Where the data came from, what I removed, and what it can't tell you.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://datastudio.google.com/reporting/099b039d-3b90-41fb-8594-2baaa710fe81/page/p_wgjtcgwo6d" target="_blank" rel="noopener">Open the dashboard</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================== Document -->
+    <section class="band">
+      <div class="wrap">
+        <div class="doc">
+
+          <h3>The source</h3>
+          <p>The data is the FY2023 public use file from the CMS Healthcare Provider Cost Reporting Information System (HCRIS). Every hospital that bills Medicare files an annual cost report, and CMS publishes those reports as submitted.</p>
+          <p>The raw file has 6,103 rows. The dashboard uses 5,507.</p>
+
+          <h3>What I removed</h3>
+          <ol>
+            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends. I kept the report covering the longer period.</li>
+            <li><strong>Partial-year reports.</strong> I kept only reports covering 350 to 380 days. A nine-month revenue figure is not comparable to a twelve-month one.</li>
+            <li><strong>Impossible values.</strong> Occupancy above 100%, average length of stay above 365 days, and zero or negative net patient revenue.</li>
+          </ol>
+          <p>I also decoded the reference codes into readable labels: facility type from the CCN, ownership from the Type of Control field (grouped into Nonprofit, For-Profit, and Government), and rural or urban setting.</p>
+
+          <h3>The metrics</h3>
+          <p>Every metric in the report has a direct equivalent in capacity pricing. That was the point of the project.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th scope="col">Pricing metric</th>
+                  <th scope="col">Hospital equivalent</th>
+                  <th scope="col">Formula</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Occupancy %</td><td>Occupancy Rate</td><td class="formula">Patient Days ÷ Bed Days Available</td></tr>
+                <tr><td>ADR</td><td>Revenue per Occupied Bed Day</td><td class="formula">Net Patient Revenue ÷ Patient Days</td></tr>
+                <tr><td>RevPAR</td><td>Revenue per Available Bed Day</td><td class="formula">Net Patient Revenue ÷ Bed Days Available</td></tr>
+                <tr><td>Length of stay</td><td>ALOS</td><td class="formula">Patient Days ÷ Discharges</td></tr>
+                <tr><td>Segment mix</td><td>Medicare Day Mix</td><td class="formula">Medicare Days ÷ Patient Days</td></tr>
+                <tr><td>Available room nights</td><td>Bed Days Available</td><td class="formula">Beds × days in period</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Operating margin is net patient revenue minus operating expense, divided by net patient revenue.</p>
+          <p>Medicare Day Mix behaves like segment mix. Medicare pays a fixed rate regardless of what care actually costs, so a hospital with a high Medicare share has very little pricing lever. It is the same position as a property carrying mostly negotiated contract business.</p>
+
+          <h3>Weighted vs. simple averages</h3>
+          <p>This decides whether any of the rollup numbers mean anything.</p>
+          <div class="callout">
+            <p>Simple average of the 5,507 occupancy rates: <strong>54.4%</strong><br>
+            Total patient days ÷ total bed days available: <strong>65.9%</strong></p>
+          </div>
+          <p>Both are correct and they answer different questions. The first says the typical hospital runs 54% full. The second says the hospital system runs 66% full. An 800-bed academic center and a 12-bed critical access hospital count equally in the first and very unequally in the second.</p>
+          <p>Every rollup in the report, by state, facility type, and bed size band, uses the weighted version. The distribution charts use hospital-level ratios, because there the individual hospital is the unit I care about.</p>
+
+          <h3>What the data shows</h3>
+          <p>Occupancy and operating margin move together across the whole range.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th scope="col">Occupancy band</th>
+                  <th scope="col" class="num">Hospitals</th>
+                  <th scope="col" class="num">Median operating margin</th>
+                  <th scope="col" class="num">Losing money</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Under 25%</td><td class="num">1,062</td><td class="num">−8.6%</td><td class="num">69.8%</td></tr>
+                <tr><td>25–40%</td><td class="num">827</td><td class="num">−5.5%</td><td class="num">64.3%</td></tr>
+                <tr><td>40–55%</td><td class="num">913</td><td class="num">−3.1%</td><td class="num">58.9%</td></tr>
+                <tr><td>55–70%</td><td class="num">1,119</td><td class="num">−1.1%</td><td class="num">52.9%</td></tr>
+                <tr><td>70% and above</td><td class="num">1,586</td><td class="num">+2.7%</td><td class="num">43.1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Rural hospitals run 39.2% occupancy with a median margin of −5.4%. Urban hospitals run 64.0% and +0.7%. Across all 5,507, 56% lost money on patient care in 2023.</p>
+
+          <h3>What this data can't tell you</h3>
+          <ul>
+            <li><strong>The reports are self-reported.</strong> CMS publishes what hospitals submit. Extreme outliers are often data entry errors rather than real operations.</li>
+            <li><strong>Occupancy uses licensed beds, not staffed beds.</strong> A hospital may be licensed for 300 beds and staff only 220. Real operational occupancy runs higher than what this shows.</li>
+            <li><strong>Operating margin excludes non-operating income.</strong> Investment returns, grants, parking, and cafeteria revenue are not in it. That is why so many hospitals show a negative operating margin and stay open. I kept the operating view because it isolates the patient care business.</li>
+            <li><strong>This is one fiscal year.</strong> There is no trend in it.</li>
+          </ul>
+
+          <h3>How it was built</h3>
+          <p>Python for the cleaning and the calculated fields. Looker Studio for the report itself, chosen because its public share link needs no license on either end.</p>
+
+          <p style="margin-top:2.5rem"><a class="back-link" href="./projects.html">← Back to work</a></p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================== Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:chad.odell.nelson@gmail.com">chad.odell.nelson@gmail.com</a></li>
+        <li><a href="tel:+17125409769">(712) 540-9769</a></li>
+        <li><a href="https://linkedin.com/in/nelson-chad" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/chad-nelson" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <p class="colophon">Las Vegas, NV &nbsp;·&nbsp; M.S. Business Analytics, University of Iowa</p>
+    </div>
+  </footer>
+
+</body>
+</html>
