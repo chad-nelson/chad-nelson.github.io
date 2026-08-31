@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard Methodology — Chad Nelson</title>
-  <meta name="description" content="How the Capacity and Margin Dashboard was built: CMS HCRIS source data, cleaning rules, metric definitions, weighting method, and known limitations.">
+  <meta name="description" content="How the Capacity and Margin Dashboard was built: CMS HCRIS source data, data cleaning, metric definitions, weighting method, and limitations.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
       <div class="wrap">
         <h1 class="hero-name">Dashboard<br>Methodology</h1>
         <p class="hero-meta">Capacity &amp; Margin Dashboard</p>
-        <p class="hero-sub">Where the data came from, what I removed, and what it can't tell you.</p>
+        <p class="hero-sub">Where the data came from and what it shows.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://datastudio.google.com/reporting/099b039d-3b90-41fb-8594-2baaa710fe81/page/p_wgjtcgwo6d" target="_blank" rel="noopener">Open the dashboard</a>
         </div>
@@ -46,26 +46,25 @@
         <div class="doc">
 
           <h3>The source</h3>
-          <p>The data is the FY2023 public use file from the CMS Healthcare Provider Cost Reporting Information System (HCRIS). Every hospital that bills Medicare files an annual cost report, and CMS publishes those reports as submitted.</p>
-          <p>The raw file has 6,103 rows. The dashboard uses 5,507.</p>
+          <p>The data is the FY2023 public use file from the CMS Healthcare Provider Cost Reporting Information System (HCRIS). Every hospital that bills Medicare files an annual cost report, and CMS publishes those reports.</p>
 
           <h3>What I removed</h3>
           <ol>
-            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends. I kept the report covering the longer period.</li>
-            <li><strong>Partial-year reports.</strong> I kept only reports covering 350 to 380 days. A nine-month revenue figure is not comparable to a twelve-month one.</li>
-            <li><strong>Impossible values.</strong> Occupancy above 100%, average length of stay above 365 days, and zero or negative net patient revenue.</li>
+            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends. I kept the reports covering the longer period.</li>
+            <li><strong>Partial-year reports.</strong> I kept only reports ranging from 350-380 days.</li>
+            <li><strong>Dirty Data.</strong> Occupancy above 100%, average length of stay above 365 days, and zero or negative net patient revenue.</li>
           </ol>
-          <p>I also decoded the reference codes into readable labels: facility type from the CCN, ownership from the Type of Control field (grouped into Nonprofit, For-Profit, and Government), and rural or urban setting.</p>
+          <p>I also edited the reference codes into cleaner labels: facility type from the CCN, ownership structure from the Type of Control field (e.g., Nonprofit, For-Profit, and Government).</p>
 
           <h3>The metrics</h3>
-          <p>Every metric in the report has a direct equivalent in capacity pricing. That was the point of the project.</p>
+          <p>Every metric in the report has an equivalent in hospitality pricing.</p>
           <div class="table-wrap">
             <table class="data">
               <thead>
                 <tr>
-                  <th scope="col">Pricing metric</th>
-                  <th scope="col">Hospital equivalent</th>
-                  <th scope="col">Formula</th>
+                  <th scope="col">Hospitality metric</th>
+                  <th scope="col">CMS equivalent</th>
+                  <th scope="col">CMS Formula</th>
                 </tr>
               </thead>
               <tbody>
@@ -78,20 +77,18 @@
               </tbody>
             </table>
           </div>
-          <p>Operating margin is net patient revenue minus operating expense, divided by net patient revenue.</p>
-          <p>Medicare Day Mix behaves like segment mix. Medicare pays a fixed rate regardless of what care actually costs, so a hospital with a high Medicare share has very little pricing lever. It is the same position as a property carrying mostly negotiated contract business.</p>
+          <p>Medicare Day Mix behaves like hospitality segment mix. Medicare pays a fixed rate regardless of what care actually costs, so a hospital with a high Medicare share has very little pricing power. Just like a property with negotiated convention business.</p>
 
           <h3>Weighted vs. simple averages</h3>
-          <p>This decides whether any of the rollup numbers mean anything.</p>
           <div class="callout">
             <p>Simple average of the 5,507 occupancy rates: <strong>54.4%</strong><br>
             Total patient days ÷ total bed days available: <strong>65.9%</strong></p>
           </div>
-          <p>Both are correct and they answer different questions. The first says the typical hospital runs 54% full. The second says the hospital system runs 66% full. An 800-bed academic center and a 12-bed critical access hospital count equally in the first and very unequally in the second.</p>
-          <p>Every rollup in the report, by state, facility type, and bed size band, uses the weighted version. The distribution charts use hospital-level ratios, because there the individual hospital is the unit I care about.</p>
+          <p>Both are correct and they answer different questions. The first says the typical hospital runs 54% full. The second says the hospital system runs 66% full. An 800-bed center and a 12-bed emergency hospital count equally in the first but very unequally in the second.</p>
+          <p>Every rollup in the report uses the weighted version.</p>
 
           <h3>What the data shows</h3>
-          <p>Occupancy and operating margin move together across the whole range.</p>
+          <p>Occupancy and operating margin move together.</p>
           <div class="table-wrap">
             <table class="data">
               <thead>
@@ -113,16 +110,16 @@
           </div>
           <p>Rural hospitals run 39.2% occupancy with a median margin of −5.4%. Urban hospitals run 64.0% and +0.7%. Across all 5,507, 56% lost money on patient care in 2023.</p>
 
-          <h3>What this data can't tell you</h3>
+          <h3>What's missing or misleading</h3>
           <ul>
-            <li><strong>The reports are self-reported.</strong> CMS publishes what hospitals submit. Extreme outliers are often data entry errors rather than real operations.</li>
-            <li><strong>Occupancy uses licensed beds, not staffed beds.</strong> A hospital may be licensed for 300 beds and staff only 220. Real operational occupancy runs higher than what this shows.</li>
-            <li><strong>Operating margin excludes non-operating income.</strong> Investment returns, grants, parking, and cafeteria revenue are not in it. That is why so many hospitals show a negative operating margin and stay open. I kept the operating view because it isolates the patient care business.</li>
-            <li><strong>This is one fiscal year.</strong> There is no trend in it.</li>
+            <li><strong>The reports are self-reported.</strong> CMS publishes what hospitals submit.</li>
+            <li><strong>Occupancy uses licensed beds, not staffed beds.</strong> A hospital may be licensed for 300 beds and staff only 220. Real operational occupancy runs higher than this shows.</li>
+            <li><strong>Operating margin excludes non-operating income.</strong> Investment returns, grants, parking, and cafeteria revenue are not in it.</li>
+            <li><strong>This is one fiscal year.</strong> There are no historical numbers to analyze trends.</li>
           </ul>
 
           <h3>How it was built</h3>
-          <p>Python for the cleaning and the calculated fields. Looker Studio for the report itself, chosen because its public share link needs no license on either end.</p>
+          <p>Python for the cleaning and calculated fields. Looker Studio for the report since it's easily acessible and has a free version :)</p>
 
           <p style="margin-top:2.5rem"><a class="back-link" href="./projects.html">← Back to work</a></p>
 
