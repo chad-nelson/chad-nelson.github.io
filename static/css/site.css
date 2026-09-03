@@ -366,7 +366,7 @@ a:hover { color: var(--text); }
 }
 .project-context {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 1.0rem;
   letter-spacing: 0.05em;
   color: var(--muted);
   margin: 0 0 1rem;
