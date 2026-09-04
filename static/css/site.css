@@ -395,6 +395,7 @@ a:hover { color: var(--text); }
 .cred-list li {
   border-left: 2px solid var(--rule);
   padding-left: 1rem;
+  border-left-color: var(--gold);
 }
 .cred-name { display: block; font-weight: 600; }
 .cred-meta {
