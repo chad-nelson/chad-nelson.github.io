@@ -199,7 +199,7 @@ a:hover { color: var(--text); }
   font-family: var(--display);
   font-weight: 600;
   font-size: clamp(2.5rem, 11vw, 7.5rem);
-  line-height: 0.77;
+  line-height: 0.86;
   letter-spacing: -0.045em;
   text-transform: uppercase;
   margin: 0;
