@@ -518,17 +518,3 @@ table.data tr:last-child td { border-bottom: 0; }
   margin: 2rem 0 0;
   padding-bottom: 3rem;
 }
-@media (max-width: 480px) {
-  .colophon {
-    display: block;
-    overflow-wrap: break-word;
-    line-height: 1.6;
-  }
-  .colophon::first-line {
-    line-height: 1;
-  }
-  .colophon {
-    letter-spacing: normal;
-    text-indent: 0;
-  }
-}
