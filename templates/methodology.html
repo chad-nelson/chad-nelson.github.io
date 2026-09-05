@@ -46,49 +46,47 @@
         <div class="doc">
 
           <h3>The source</h3>
-          <p>The data is the FY2023 public use file from the CMS Healthcare Provider Cost Reporting Information System (HCRIS). Every hospital that bills Medicare files an annual cost report, and CMS publishes those reports.</p>
+          <p>The data is from the FY 2023 HCRIS public use file on the CMS website.</p>
 
-          <h3>What I removed</h3>
+          <h3>Data cleaning</h3>
           <ol>
-            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends. I kept the reports covering the longer period.</li>
+            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends.</li>
             <li><strong>Partial-year reports.</strong> I kept only reports ranging from 350-380 days.</li>
             <li><strong>Dirty Data.</strong> Occupancy above 100%, average length of stay above 365 days, and zero or negative net patient revenue.</li>
           </ol>
           <p>I also edited the reference codes into cleaner labels: facility type from the CCN, ownership structure from the Type of Control field (e.g., Nonprofit, For-Profit, and Government).</p>
 
           <h3>The metrics</h3>
-          <p>Every metric in the report has an equivalent in hospitality pricing.</p>
           <div class="table-wrap">
             <table class="data">
               <thead>
                 <tr>
-                  <th scope="col">Hospitality metric</th>
-                  <th scope="col">CMS equivalent</th>
+                  <th scope="col">CMS metric</th>
+                  <th scope="col">Hospitality equivalent</th>
                   <th scope="col">CMS Formula</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Occupancy %</td><td>Occupancy Rate</td><td class="formula">Patient Days ÷ Bed Days Available</td></tr>
-                <tr><td>ADR</td><td>Revenue per Occupied Bed Day</td><td class="formula">Net Patient Revenue ÷ Patient Days</td></tr>
-                <tr><td>RevPAR</td><td>Revenue per Available Bed Day</td><td class="formula">Net Patient Revenue ÷ Bed Days Available</td></tr>
-                <tr><td>Length of stay</td><td>ALOS</td><td class="formula">Patient Days ÷ Discharges</td></tr>
-                <tr><td>Segment mix</td><td>Medicare Day Mix</td><td class="formula">Medicare Days ÷ Patient Days</td></tr>
-                <tr><td>Available room nights</td><td>Bed Days Available</td><td class="formula">Beds × days in period</td></tr>
+                <tr><td>Occupancy Rate</td><td>Occupancy %</td><td class="formula">Patient Days ÷ Bed Days Available</td></tr>
+                <tr><td>Revenue per Occupied Bed Day</td><td>ADR</td><td class="formula">Net Patient Revenue ÷ Patient Days</td></tr>
+                <tr><td>Revenue per Available Bed Day</td><td>RevPAR</td><td class="formula">Net Patient Revenue ÷ Bed Days Available</td></tr>
+                <tr><td>ALOS</td><td>Length of stay</td><td class="formula">Patient Days ÷ Discharges</td></tr>
+                <tr><td>Medicare Day Mix</td><td>Segment mix</td><<td class="formula">Medicare Days ÷ Patient Days</td></tr>
+                <tr><td>Bed Days Available</td><td>Available room nights</td><td class="formula">Beds × days in period</td></tr>
               </tbody>
             </table>
           </div>
-          <p>Medicare Day Mix behaves like hospitality segment mix. Medicare pays a fixed rate regardless of what care actually costs, so a hospital with a high Medicare share has very little pricing power. Just like a property with a high amount of negotiated convention business.</p>
+          <p>All of the CMS metrics have an equivalent metric used in hopitality. E.g., medicare day mix behaves like hospitality segment mix. Medicare pays a fixed rate regardless of what care actually costs, so a hospital with a high Medicare share has very little pricing power. Just like a property with a high amount of negotiated convention business.</p>
 
-          <h3>Weighted vs. simple averages</h3>
+          <h3>Using weighted vs. simple averages</h3>
           <div class="callout">
             <p>Simple average of the 5,507 occupancy rates: <strong>54.4%</strong><br>
             Total patient days ÷ total bed days available: <strong>65.9%</strong></p>
           </div>
-          <p>Both are correct and they answer different questions. The first says the typical hospital runs 54% full. The second says the hospital system runs 66% full. An 800-bed center and a 12-bed emergency hospital count equally in the first but very unequally in the second.</p>
-          <p>Every rollup in the report uses the weighted version.</p>
+          <p>Every data point in the Looker dashboard uses the weighted average.</p>
 
           <h3>What the data shows</h3>
-          <p>Occupancy and operating margin move together.</p>
+          <p>Occupancy and operating margin have a positive correlation.</p>
           <div class="table-wrap">
             <table class="data">
               <thead>
@@ -108,9 +106,9 @@
               </tbody>
             </table>
           </div>
-          <p>Rural hospitals run 39.2% occupancy with a median margin of −5.4%. Urban hospitals run 64.0% and +0.7%. Across all 5,507, 56% lost money on patient care in 2023.</p>
+          <p>Rural hospitals run 39.2% occupancy with a median margin of −5.4%. Urban hospitals run 64.0% and +0.7%.</p>
 
-          <h3>What's missing or misleading</h3>
+          <h3>Data Limitations</h3>
           <ul>
             <li><strong>The reports are self-reported.</strong> CMS publishes what hospitals submit.</li>
             <li><strong>Occupancy uses licensed beds, not staffed beds.</strong> A hospital may be licensed for 300 beds and staff only 220. Real operational occupancy runs higher than this shows.</li>
