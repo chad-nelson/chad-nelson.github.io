@@ -49,9 +49,13 @@
 
           <h3>Data cleaning</h3>
           <ol>
-            <li><strong>Duplicate filings.</strong> 63 hospitals filed two cost reports because they changed fiscal year ends.</li>
-            <li><strong>Partial-year reports.</strong> I kept only reports ranging from 350-380 days.</li>
-            <li><strong>Dirty Data.</strong> Occupancy above 100%, average length of stay above 365 days, and zero or negative net patient revenue.</li>
+            <li><strong>Duplicates</strong> - 62 hospitals had two or more cost reports.</li>
+            <li><strong>Partial-year reports</strong> - kept only reports ranging from 350-380 days to get full-year analyses.</li>
+            <li><strong>Capacity</strong> - reports with no bed or patient days.</li>
+            <li><strong>Occupancy</strong> - reports with occupancy > 100%.</li>
+            <li><strong>Length of stay</strong> - reports with length of stay > 365 days.</li>
+            <li><strong>Net patient revenue</strong> - reports with zero or negative net patient revenue.</li>
+            <li><strong>Dirty Data</strong> - One report had $1 net patient revenue and $129.9M in operating expense. Must have been a high-cost procedure :D</li>
           </ol>
           <p>I also edited the reference codes into cleaner labels: facility type from the CCN, ownership structure from the Type of Control field (e.g., Nonprofit, For-Profit, and Government).</p>
 
@@ -79,7 +83,7 @@
 
           <h3>Using weighted vs. simple averages</h3>
           <div class="callout">
-            <p>Simple average of the 5,507 occupancy rates: <strong>54.4%</strong><br>
+            <p>Simple average of the 5,506 occupancy rates: <strong>54.4%</strong><br>
             Total patient days ÷ total bed days available: <strong>65.9%</strong></p>
           </div>
           <p>Every data point in the Looker dashboard uses the weighted average.</p>
@@ -97,11 +101,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Under 25%</td><td class="num">1,062</td><td class="num">−8.6%</td><td class="num">69.8%</td></tr>
-                <tr><td>25–40%</td><td class="num">827</td><td class="num">−5.5%</td><td class="num">64.3%</td></tr>
-                <tr><td>40–55%</td><td class="num">913</td><td class="num">−3.1%</td><td class="num">58.9%</td></tr>
-                <tr><td>55–70%</td><td class="num">1,119</td><td class="num">−1.1%</td><td class="num">52.9%</td></tr>
-                <tr><td>70% and above</td><td class="num">1,586</td><td class="num">+2.7%</td><td class="num">43.1%</td></tr>
+                <tr><td>Under 25%</td><td class="num">1,061</td><td class="num">−8.6%</td><td class="num">69.8%</td></tr>
+                <tr><td>25–40%</td><td class="num">826</td><td class="num">−5.5%</td><td class="num">64.3%</td></tr>
+                <tr><td>40–55%</td><td class="num">914</td><td class="num">−3.1%</td><td class="num">58.9%</td></tr>
+                <tr><td>55–70%</td><td class="num">1,118</td><td class="num">−1.1%</td><td class="num">52.9%</td></tr>
+                <tr><td>70% and above</td><td class="num">1,587</td><td class="num">+2.7%</td><td class="num">43.1%</td></tr>
               </tbody>
             </table>
           </div>
