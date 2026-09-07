@@ -375,7 +375,6 @@ a:hover { color: var(--text); }
 .project p { max-width: 64ch; margin: 0 0 1rem; }
 .project p:last-child { margin-bottom: 0; }
 .project .impact {
-  font-weight: 600;
   color: var(--text);
   border-left: 3px solid var(--gold);
   padding-left: 0.85rem;
