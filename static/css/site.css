@@ -156,7 +156,10 @@ a:hover { color: var(--text); }
   color: var(--white);
   text-decoration: none;
 }
-.nav-mark:hover { color: var(--gold); }
+.nav-mark:hover {
+  color: var(--gold); 
+  border-bottom-color: var(--gold);
+}
 .nav-links {
   display: flex;
   align-items: center;
