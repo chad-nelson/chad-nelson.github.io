@@ -155,6 +155,9 @@ a:hover { color: var(--text); }
   text-transform: uppercase;
   color: var(--white);
   text-decoration: none;
+  padding-block: 0.35rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 140ms ease;
 }
 .nav-mark:hover {
   color: var(--gold); 
