@@ -524,3 +524,13 @@ table.data tr:last-child td { border-bottom: 0; }
   margin: 2rem 0 0;
   padding-bottom: 3rem;
 }
+.project-metrics {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Indents the bullets */
+  margin-top: 0.5rem;   /* Space between paragraph and list */
+}
+.project-metrics li {
+  line-height: 1.2;     /* Controls the tightness of the lines */
+  margin-bottom: 0.4rem; /* Precise spacing between individual bullet items */
+}
+
